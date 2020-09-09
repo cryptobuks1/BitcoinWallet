@@ -11,24 +11,26 @@ import UIKit
 
 class WalletViewController: UIViewController {
     var TxWallet: Wallet!
-    
+    var URLBuild: URLBuilder!
+    let cellID = "cellID"
     override func viewDidLoad() {
         super.viewDidLoad()
+        URLBuild = URLBuilder()
         constructWallet()
     }
     
     func constructWallet() {
         TxWallet = Wallet()
         for addr in AddressList().list {
-            addressBalance(addr) { (balance) in
-                let address = Address(bal: balance, hist: [""])
+            addressBalance(addr) { (utxo, balance) in
+                let address = Address(utxo, addr, balance, false)
                 self.TxWallet.addressArr.append(address)
                 self.TxWallet.updateBalance(val: address.balance)
             }
         }
     }
     
-    func addressBalance(_ address: String, completion: @escaping (Int) -> Void) {
+    func addressBalance(_ address: String, completion: @escaping ([Address.UTXO], Int) -> Void) {
         var addrBal = 0
         getAddrUtxo(address) { (arr, err) in
             guard let utxoArr = arr else { return }
@@ -38,12 +40,12 @@ class WalletViewController: UIViewController {
                     addrBal += amt
                 }
             }
-            completion(addrBal)
+            completion(utxoArr, addrBal)
         }
     }
     
     func getAddrUtxo(_ address: String, completion: @escaping ([Address.UTXO]?, Error?) -> Void) {
-        guard let url = url(address) else {
+        guard let url = URLBuild.url(address) else {
             return
         }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -62,13 +64,5 @@ class WalletViewController: UIViewController {
         }
         task.resume()
     }
-    
-    func url(_ address: String) -> URL? {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "blockstream.info"
-        let subpath = "\(address)/utxo"
-        components.path = "/testnet/api/address/\(subpath)"
-        return components.url
-    }
 }
+

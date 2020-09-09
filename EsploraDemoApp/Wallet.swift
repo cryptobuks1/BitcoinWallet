@@ -9,7 +9,6 @@
 class Wallet {
     var balance: Int
     var addressArr: [Address]
-    
     init() {
         self.balance = 0
         self.addressArr = [Address]()
