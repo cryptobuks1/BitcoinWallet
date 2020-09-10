@@ -3,7 +3,6 @@
 //  EsploraDemoApp
 //
 //  Created by Asaad on 9/3/20.
-//  Copyright © 2020 Animata Inc. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        let navController = UINavigationController(rootViewController: WalletViewController())
+        window?.rootViewController = navController
         return true
     }
 
