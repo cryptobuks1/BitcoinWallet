@@ -23,6 +23,7 @@
 		72825C48250A3CA100C8D4B8 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72825C47250A3CA100C8D4B8 /* AppFonts.swift */; };
 		72825C4B250A3FA600C8D4B8 /* DINPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 72825C49250A3FA600C8D4B8 /* DINPro.otf */; };
 		72825C4C250A3FA600C8D4B8 /* DINPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 72825C4A250A3FA600C8D4B8 /* DINPro-Medium.otf */; };
+		72825C4F250A5FF100C8D4B8 /* AddressTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72825C4E250A5FF100C8D4B8 /* AddressTableHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		72825C47250A3CA100C8D4B8 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		72825C49250A3FA600C8D4B8 /* DINPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DINPro.otf; sourceTree = "<group>"; };
 		72825C4A250A3FA600C8D4B8 /* DINPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Medium.otf"; sourceTree = "<group>"; };
+		72825C4E250A5FF100C8D4B8 /* AddressTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +104,9 @@
 				72553E70250796D9005C4E59 /* Address.swift */,
 				72553E6E250796A0005C4E59 /* AddressList.swift */,
 				721513082500F5C60054AF97 /* WalletViewController.swift */,
-				72825C41250A2CAF00C8D4B8 /* BalanceTableViewCell.swift */,
+				72825C4E250A5FF100C8D4B8 /* AddressTableHeader.swift */,
 				72825C45250A2CDA00C8D4B8 /* TransactionTableViewCell.swift */,
+				72825C41250A2CAF00C8D4B8 /* BalanceTableViewCell.swift */,
 				72825C47250A3CA100C8D4B8 /* AppFonts.swift */,
 				724C978B2508F01900B2DF24 /* SatoshiConverter.swift */,
 				724C97892508C76D00B2DF24 /* URLBuilder.swift */,
@@ -244,6 +247,7 @@
 				72553E71250796D9005C4E59 /* Address.swift in Sources */,
 				724C978A2508C76D00B2DF24 /* URLBuilder.swift in Sources */,
 				72825C48250A3CA100C8D4B8 /* AppFonts.swift in Sources */,
+				72825C4F250A5FF100C8D4B8 /* AddressTableHeader.swift in Sources */,
 				72825C42250A2CAF00C8D4B8 /* BalanceTableViewCell.swift in Sources */,
 				72825C46250A2CDA00C8D4B8 /* TransactionTableViewCell.swift in Sources */,
 				721513072500F5C60054AF97 /* AppDelegate.swift in Sources */,

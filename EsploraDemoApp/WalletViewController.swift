@@ -8,12 +8,6 @@
 import Foundation
 import UIKit
 
-//now start to optimize the UI
-// start with header rows should be sized to the tablerow
-// tablerow add label and constrain + confirmation tag yes/no
-// then headerlabel size to same height as table row.
-// to each section add first table row = transaction / balance titles
-
 class WalletViewController: UITableViewController {
     var TxWallet: Wallet!
     var URLBuild: URLBuilder!
@@ -31,20 +25,9 @@ class WalletViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: balCell)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: addressCell)
         tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: "txCell")
-        
-        printFontNames()
+        tableView.register(AddressTableHeader.self, forHeaderFooterViewReuseIdentifier: "addrHeader")
     }
 
-    func printFontNames() {
-        for family: String in UIFont.familyNames {
-            print(family)
-            for names: String in UIFont.fontNames(forFamilyName: family) {
-                print("== \(names)")
-            }
-        }
-    }
-
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return TxWallet.addressArr.count + 1
     }
@@ -64,7 +47,6 @@ class WalletViewController: UITableViewController {
             return cell
         } else {
             let cell: TransactionTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "txCell") as? TransactionTableViewCell
-            //cell.textLabel?.text = TxWallet.addressArr[indexPath.section - 1].transactions[indexPath.row].txid
             cell.txIDLabel.text = TxWallet.addressArr[indexPath.section - 1].transactions[indexPath.row].txid
             cell.statusLabel.text = TxWallet.addressArr[indexPath.section - 1].transactions[indexPath.row].strStatus()
             return cell
@@ -72,14 +54,20 @@ class WalletViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.backgroundColor = UIColor.lightGray
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "addrHeader") as! AddressTableHeader
         if section == 0 {
-            label.text = "Balance"
+            view.addrLabel.text = "Balance"
         } else {
-            label.text = TxWallet.addressArr[section - 1].address
+            view.addrLabel.text = TxWallet.addressArr[section - 1].address
         }
-        return label
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "addrHeader") as? AddressTableHeader {
+            return view.frame.size.height
+        }
+        return tableView.cellForRow(at: IndexPath())!.frame.size.height
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
