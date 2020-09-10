@@ -8,7 +8,12 @@
 
 import UIKit
 
-struct TxLabelFont {
+struct TitleFont {
+    let fontName =  "DINPro-Medium"
+    let fontSize = 16.0 as CGFloat
+}
+
+struct BalanceFont {
     let fontName =  "DINPro"
     let fontSize = 16.0 as CGFloat
 }
@@ -18,8 +23,8 @@ struct AddrLabelFont {
     let fontSize = 16.0 as CGFloat
 }
 
-struct TitleFont {
-    let fontName =  "DINPro-Medium"
+struct TxLabelFont {
+    let fontName =  "DINPro"
     let fontSize = 16.0 as CGFloat
 }
 

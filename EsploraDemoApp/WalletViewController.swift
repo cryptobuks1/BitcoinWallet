@@ -12,9 +12,9 @@ class WalletViewController: UITableViewController {
     var TxWallet: Wallet!
     var URLBuild: URLBuilder!
     var SatoshiConvt: SatoshiConverter!
-    let balCell = "balCell"
-    let addressCell = "addressCell"
-    let txCell = "txCell"
+    let balCellID = "balCell"
+    let txCellID = "txCell"
+    let headerCellID = "addrHeader"
     override func viewDidLoad() {
         super.viewDidLoad()
         URLBuild = URLBuilder()
@@ -22,10 +22,9 @@ class WalletViewController: UITableViewController {
         constructWallet()
         navigationItem.title = "Wallet"
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: balCell)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: addressCell)
-        tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: "txCell")
-        tableView.register(AddressTableHeader.self, forHeaderFooterViewReuseIdentifier: "addrHeader")
+        tableView.register(BalanceTableViewCell.self, forCellReuseIdentifier: balCellID)
+        tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: txCellID)
+        tableView.register(AddressTableHeader.self, forHeaderFooterViewReuseIdentifier: headerCellID)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,10 +39,9 @@ class WalletViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell
         if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: balCell, for: indexPath)
-            cell.textLabel?.text = String(SatoshiConvt.tBTC(TxWallet.balance)) + " " + SatoshiConvt.displCurrUnit
+            let cell: BalanceTableViewCell! = tableView.dequeueReusableCell(withIdentifier: balCellID) as? BalanceTableViewCell
+            cell.balanceLabel?.text = String(SatoshiConvt.tBTC(TxWallet.balance)) + " " + SatoshiConvt.displCurrUnit
             return cell
         } else {
             let cell: TransactionTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "txCell") as? TransactionTableViewCell
@@ -56,7 +54,7 @@ class WalletViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "addrHeader") as! AddressTableHeader
         if section == 0 {
-            view.addrLabel.text = "Balance"
+            view.isHidden = true
         } else {
             view.addrLabel.text = TxWallet.addressArr[section - 1].address
         }
@@ -65,6 +63,9 @@ class WalletViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "addrHeader") as? AddressTableHeader {
+            if section == 0 {
+                return 0
+            }
             return view.frame.size.height
         }
         return tableView.cellForRow(at: IndexPath())!.frame.size.height
@@ -75,6 +76,10 @@ class WalletViewController: UITableViewController {
             return cell.frame.size.height
         }
         return tableView.cellForRow(at: indexPath)!.frame.size.height
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
     
     func constructWallet() {
