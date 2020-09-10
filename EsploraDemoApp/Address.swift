@@ -15,10 +15,19 @@ class Address {
         var vout: Int
         var value: Int
         var status: Status
+        
+        func strStatus() -> String {
+            switch self.status.confirmed {
+            case true:
+                return "Yes"
+            case false:
+                return "No"
+            }
+        }
     }
     
     struct Status: Codable {
-        let confirmed: Bool
+        var confirmed: Bool
         let blockHeight: Int?
         let blockHash: String?
         let blockTime: Int?

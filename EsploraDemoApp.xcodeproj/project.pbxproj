@@ -14,10 +14,15 @@
 		721513112500F5C90054AF97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7215130F2500F5C90054AF97 /* LaunchScreen.storyboard */; };
 		7215131C2500F5C90054AF97 /* EsploraDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215131B2500F5C90054AF97 /* EsploraDemoAppTests.swift */; };
 		724C978A2508C76D00B2DF24 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C97892508C76D00B2DF24 /* URLBuilder.swift */; };
-		724C978C2508F01A00B2DF24 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C978B2508F01900B2DF24 /* CurrencyConverter.swift */; };
+		724C978C2508F01A00B2DF24 /* SatoshiConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C978B2508F01900B2DF24 /* SatoshiConverter.swift */; };
 		72553E6F250796A0005C4E59 /* AddressList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72553E6E250796A0005C4E59 /* AddressList.swift */; };
 		72553E71250796D9005C4E59 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72553E70250796D9005C4E59 /* Address.swift */; };
 		72553E73250796ED005C4E59 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72553E72250796ED005C4E59 /* Wallet.swift */; };
+		72825C42250A2CAF00C8D4B8 /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72825C41250A2CAF00C8D4B8 /* BalanceTableViewCell.swift */; };
+		72825C46250A2CDA00C8D4B8 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72825C45250A2CDA00C8D4B8 /* TransactionTableViewCell.swift */; };
+		72825C48250A3CA100C8D4B8 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72825C47250A3CA100C8D4B8 /* AppFonts.swift */; };
+		72825C4B250A3FA600C8D4B8 /* DINPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 72825C49250A3FA600C8D4B8 /* DINPro.otf */; };
+		72825C4C250A3FA600C8D4B8 /* DINPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 72825C4A250A3FA600C8D4B8 /* DINPro-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +47,15 @@
 		7215131B2500F5C90054AF97 /* EsploraDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsploraDemoAppTests.swift; sourceTree = "<group>"; };
 		7215131D2500F5C90054AF97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		724C97892508C76D00B2DF24 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
-		724C978B2508F01900B2DF24 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
+		724C978B2508F01900B2DF24 /* SatoshiConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatoshiConverter.swift; sourceTree = "<group>"; };
 		72553E6E250796A0005C4E59 /* AddressList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressList.swift; sourceTree = "<group>"; };
 		72553E70250796D9005C4E59 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		72553E72250796ED005C4E59 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		72825C41250A2CAF00C8D4B8 /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
+		72825C45250A2CDA00C8D4B8 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		72825C47250A3CA100C8D4B8 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		72825C49250A3FA600C8D4B8 /* DINPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DINPro.otf; sourceTree = "<group>"; };
+		72825C4A250A3FA600C8D4B8 /* DINPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +102,13 @@
 				72553E70250796D9005C4E59 /* Address.swift */,
 				72553E6E250796A0005C4E59 /* AddressList.swift */,
 				721513082500F5C60054AF97 /* WalletViewController.swift */,
-				724C978B2508F01900B2DF24 /* CurrencyConverter.swift */,
+				72825C41250A2CAF00C8D4B8 /* BalanceTableViewCell.swift */,
+				72825C45250A2CDA00C8D4B8 /* TransactionTableViewCell.swift */,
+				72825C47250A3CA100C8D4B8 /* AppFonts.swift */,
+				724C978B2508F01900B2DF24 /* SatoshiConverter.swift */,
 				724C97892508C76D00B2DF24 /* URLBuilder.swift */,
 				7215130A2500F5C70054AF97 /* Main.storyboard */,
+				72825C4D250A400B00C8D4B8 /* Fonts */,
 				7215130D2500F5C90054AF97 /* Assets.xcassets */,
 				7215130F2500F5C90054AF97 /* LaunchScreen.storyboard */,
 				721513122500F5C90054AF97 /* Info.plist */,
@@ -109,6 +123,15 @@
 				7215131D2500F5C90054AF97 /* Info.plist */,
 			);
 			path = EsploraDemoAppTests;
+			sourceTree = "<group>";
+		};
+		72825C4D250A400B00C8D4B8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				72825C4A250A3FA600C8D4B8 /* DINPro-Medium.otf */,
+				72825C49250A3FA600C8D4B8 /* DINPro.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				721513112500F5C90054AF97 /* LaunchScreen.storyboard in Resources */,
+				72825C4B250A3FA600C8D4B8 /* DINPro.otf in Resources */,
 				7215130E2500F5C90054AF97 /* Assets.xcassets in Resources */,
 				7215130C2500F5C70054AF97 /* Main.storyboard in Resources */,
+				72825C4C250A3FA600C8D4B8 /* DINPro-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,11 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				72553E73250796ED005C4E59 /* Wallet.swift in Sources */,
-				724C978C2508F01A00B2DF24 /* CurrencyConverter.swift in Sources */,
+				724C978C2508F01A00B2DF24 /* SatoshiConverter.swift in Sources */,
 				721513092500F5C60054AF97 /* WalletViewController.swift in Sources */,
 				72553E6F250796A0005C4E59 /* AddressList.swift in Sources */,
 				72553E71250796D9005C4E59 /* Address.swift in Sources */,
 				724C978A2508C76D00B2DF24 /* URLBuilder.swift in Sources */,
+				72825C48250A3CA100C8D4B8 /* AppFonts.swift in Sources */,
+				72825C42250A2CAF00C8D4B8 /* BalanceTableViewCell.swift in Sources */,
+				72825C46250A2CDA00C8D4B8 /* TransactionTableViewCell.swift in Sources */,
 				721513072500F5C60054AF97 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
