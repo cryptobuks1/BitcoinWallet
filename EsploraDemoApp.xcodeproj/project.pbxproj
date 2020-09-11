@@ -100,12 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				721513062500F5C60054AF97 /* AppDelegate.swift */,
-				72553E72250796ED005C4E59 /* Wallet.swift */,
-				72553E70250796D9005C4E59 /* Address.swift */,
-				72553E6E250796A0005C4E59 /* AddressList.swift */,
+				72825C53250A74D900C8D4B8 /* Models */,
 				721513082500F5C60054AF97 /* WalletViewController.swift */,
-				72825C52250A6A3100C8D4B8 /* Cell Views */,
-				72825C47250A3CA100C8D4B8 /* AppFonts.swift */,
+				72825C52250A6A3100C8D4B8 /* CellViews */,
+				72553E6E250796A0005C4E59 /* AddressList.swift */,
 				724C978B2508F01900B2DF24 /* SatoshiConverter.swift */,
 				724C97892508C76D00B2DF24 /* URLBuilder.swift */,
 				7215130A2500F5C70054AF97 /* Main.storyboard */,
@@ -129,20 +127,30 @@
 		72825C4D250A400B00C8D4B8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				72825C47250A3CA100C8D4B8 /* AppFonts.swift */,
 				72825C4A250A3FA600C8D4B8 /* DINPro-Medium.otf */,
 				72825C49250A3FA600C8D4B8 /* DINPro.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		72825C52250A6A3100C8D4B8 /* Cell Views */ = {
+		72825C52250A6A3100C8D4B8 /* CellViews */ = {
 			isa = PBXGroup;
 			children = (
 				72825C41250A2CAF00C8D4B8 /* BalanceTableViewCell.swift */,
 				72825C4E250A5FF100C8D4B8 /* AddressTableHeader.swift */,
 				72825C45250A2CDA00C8D4B8 /* TransactionTableViewCell.swift */,
 			);
-			path = "Cell Views";
+			path = CellViews;
+			sourceTree = "<group>";
+		};
+		72825C53250A74D900C8D4B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72553E72250796ED005C4E59 /* Wallet.swift */,
+				72553E70250796D9005C4E59 /* Address.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

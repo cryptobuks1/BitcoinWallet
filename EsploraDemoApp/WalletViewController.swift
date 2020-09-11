@@ -89,7 +89,7 @@ class WalletViewController: UITableViewController {
                 let address = Address(utxo, addr, balance, false)
                 self.TxWallet.addressArr.append(address)
                 self.TxWallet.updateBalance(val: address.balance)
-                //TODO: Rather than reload entire table, reload by section (address), or as new table rows are added or updated.
+                //TODO: Rather than reload entire table, reload by section (address), or reload as new table rows are added or updated.
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
